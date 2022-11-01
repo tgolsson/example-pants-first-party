@@ -33,3 +33,17 @@ go_binary(
     main=":pkg2",
     _dependencies=["//:root#github.com/tgolsson/example-pants-third-party/cmd/hello"]
 )
+
+
+# Should not work: Local `package main` with `main.go` also "using" a package main?
+go_package(
+    name="pkg3",
+    sources=["main.go"],
+    dependencies=[":pkg"]
+)
+
+# Should not work.
+go_binary(
+    name="bin3",
+    main=":pkg3"
+)
