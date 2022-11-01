@@ -27,7 +27,7 @@ go_package(
     ],
 )
 
-# No idea what _dependencies does here; but it's also ignored.
+# No idea what _dependencies does here; but it's also ignored. This really shouldn't work either.
 go_binary(
     name="bin2",
     main=":pkg2",
